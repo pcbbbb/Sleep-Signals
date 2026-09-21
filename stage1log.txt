@@ -1,0 +1,72 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        1                   
+  Model ID:           sleep_stage_test    Model:              TimesNet            
+
+[1mData Loader[0m
+  Data:               sleep               Root Path:          ./dataset/sleep_data_ready/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             7                   
+  C Out:              5                   d model:            16                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               32                  
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.3                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      5e-05               
+  Des:                test                Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: TimesNet ...
+>>>>>>>start training : classification_sleep_stage_test_TimesNet_sleep_ftM_sl3840_ll48_pl0_dm16_nh8_el2_dl1_df32_expand2_dc4_fc1_ebtimeF_dtTrue_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+Epoch: 1 cost time: 10.06687045097351
+Epoch: 1, Steps: 18 | Train Loss: 1.401 Vali Loss: 1.084 Vali Acc: 0.663 Test Loss: 1.084 Test Acc: 0.663
+Validation loss decreased (inf --> -0.662651).  Saving model ...
+Epoch: 2 cost time: 9.59162712097168
+Epoch: 2, Steps: 18 | Train Loss: 1.100 Vali Loss: 0.842 Vali Acc: 0.699 Test Loss: 0.842 Test Acc: 0.699
+Validation loss decreased (-0.662651 --> -0.698795).  Saving model ...
+Epoch: 3 cost time: 10.091418981552124
+Epoch: 3, Steps: 18 | Train Loss: 0.902 Vali Loss: 0.754 Vali Acc: 0.759 Test Loss: 0.754 Test Acc: 0.759
+Validation loss decreased (-0.698795 --> -0.759036).  Saving model ...
+Epoch: 4 cost time: 10.322422504425049
+Epoch: 4, Steps: 18 | Train Loss: 0.841 Vali Loss: 0.769 Vali Acc: 0.759 Test Loss: 0.769 Test Acc: 0.759
+Validation loss decreased (-0.759036 --> -0.759036).  Saving model ...
+Epoch: 5 cost time: 10.275777816772461
+Epoch: 5, Steps: 18 | Train Loss: 0.783 Vali Loss: 0.763 Vali Acc: 0.771 Test Loss: 0.763 Test Acc: 0.771
+Validation loss decreased (-0.759036 --> -0.771084).  Saving model ...
+Epoch: 6 cost time: 10.185948133468628
+Epoch: 6, Steps: 18 | Train Loss: 0.752 Vali Loss: 0.775 Vali Acc: 0.771 Test Loss: 0.775 Test Acc: 0.771
+Validation loss decreased (-0.771084 --> -0.771084).  Saving model ...
+Epoch: 7 cost time: 10.25455927848816
+Epoch: 7, Steps: 18 | Train Loss: 0.733 Vali Loss: 0.835 Vali Acc: 0.771 Test Loss: 0.835 Test Acc: 0.771
+Validation loss decreased (-0.771084 --> -0.771084).  Saving model ...
+Epoch: 8 cost time: 10.123233079910278
+Epoch: 8, Steps: 18 | Train Loss: 0.742 Vali Loss: 0.809 Vali Acc: 0.771 Test Loss: 0.809 Test Acc: 0.771
+Validation loss decreased (-0.771084 --> -0.771084).  Saving model ...
+Epoch: 9 cost time: 10.05925464630127
+Epoch: 9, Steps: 18 | Train Loss: 0.701 Vali Loss: 0.844 Vali Acc: 0.771 Test Loss: 0.844 Test Acc: 0.771
+Validation loss decreased (-0.771084 --> -0.771084).  Saving model ...
+Epoch: 10 cost time: 9.99401330947876
+Epoch: 10, Steps: 18 | Train Loss: 0.699 Vali Loss: 0.842 Vali Acc: 0.747 Test Loss: 0.842 Test Acc: 0.747
+EarlyStopping counter: 1 out of 3
+>>>>>>>testing : classification_sleep_stage_test_TimesNet_sleep_ftM_sl3840_ll48_pl0_dm16_nh8_el2_dl1_df32_expand2_dc4_fc1_ebtimeF_dtTrue_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test shape: torch.Size([83, 5]) torch.Size([83])
+accuracy:0.7710843373493976

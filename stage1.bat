@@ -1,0 +1,2 @@
+@echo off
+python -X utf8 run.py --task_name classification --is_training 1 --model_id sleep_stage_test --model TimesNet --data sleep --root_path ./dataset/sleep_data_ready/ --seq_len 3840 --enc_in 8 --c_out 5 --batch_size 16 --train_epochs 10 --d_model 16 --d_ff 32 --dropout 0.3 --learning_rate 0.00005 --num_workers 0 > stage1log.txt 2>&1
